@@ -2,11 +2,6 @@
 
 import React from "react";
 import SectionHeading from "./SectionHeading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/ThemeContext";
@@ -18,44 +13,31 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Experience</SectionHeading>
-      <VerticalTimeline lineColor={theme === "light" ? "#9ca3af" : "#ffffff"}>
+      <div className="space-y-6">
         {experiencesData.map((item, index) => {
           const IconComponent = item.icon;
           return (
-            <VerticalTimelineElement
+            <div
               key={index}
-              contentStyle={{
-                background: theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              contentArrowStyle={{
-                borderRight:
-                  theme === "light"
-                    ? "0.4rem solid #9ca3af"
-                    : "0.4rem solid rgba(255, 255, 255, 0.5)",
-              }}
-              date={item.date}
-              iconStyle={{
-                background: theme === "light" ? "white" : "#1d2432",
-                fontSize: "1.5rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              icon={IconComponent ? <IconComponent /> : null}
+              className={`p-6 rounded-lg border ${
+                theme === "light"
+                  ? "bg-gray-100 border-gray-300"
+                  : "bg-gray-800 border-gray-700"
+              }`}
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
+              <div className="flex items-center gap-4">
+                {IconComponent && <IconComponent className="w-10 h-10 text-blue-500" />}
+                <div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{item.date}</p>
+                </div>
+              </div>
+              <p className="mt-2 text-gray-700 dark:text-gray-400">{item.location}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-300">{item.description}</p>
+            </div>
           );
         })}
-      </VerticalTimeline>
+      </div>
     </section>
   );
 }
