@@ -1,8 +1,23 @@
+import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
+import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
+import SectionDivider from "@/components/SectionDivider";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="text-4xl font-bold">Priyabrata</h1>
-    </div>
+    <main className="flex flex-col items-center">
+      <Intro />
+      <div className="flex flex-col items-center px-4">
+        {/* <SectionDivider />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Education />
+        <Contact /> */}
+      </div>
+    </main>
   );
 }
