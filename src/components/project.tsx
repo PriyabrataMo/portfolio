@@ -21,7 +21,6 @@ type ProjectProps = {
 export default function Project({
   title,
   description,
-  tags,
   icons,
   imageUrl,
   githubLink,

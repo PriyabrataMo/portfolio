@@ -12,7 +12,6 @@ const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
@@ -63,9 +62,10 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Priyabrata.</span> I'm a{" "}
-        <span className="font-bold">software engineer</span> and a  {" "}
-        <span className="font-bold"> Final-year Student</span> residing in Kolkata. I'm currently working with {" "} C++ , Golang , Solidity.
+        <span className="font-bold">Hello, I&apos;m Priyabrata.</span> I&apos;m a{" "}
+        <span className="font-bold">software engineer</span> and a{" "}
+        <span className="font-bold">Final-year Student</span> residing in Kolkata. I&apos;m currently working with{" "}
+        C++, Golang, Solidity.
       </motion.h1>
 
       <motion.div

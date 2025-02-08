@@ -46,7 +46,7 @@ export default function Education() {
             <li>Major in Computer Science</li>
             <li>Minor in Networks & Security</li>
             <li>Minor in Mobile Applications</li>
-            <li>Science & Engineering Dean's List - 2019 & 2021</li>
+            <li>Science &amp; Engineering Dean&apos;s List - 2019 &amp; 2021</li>
           </ul>
         </div>
       </div>
