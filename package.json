@@ -9,19 +9,41 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/components": "^0.0.32",
+    "@react-email/tailwind": "^1.0.4",
+    "framer-motion": "^12.4.1",
+    "lucide-react": "^0.475.0",
+    "next": "15.1.6",
+    "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-hot-toast": "^2.5.1",
+    "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.15.1",
+    "react-particles": "^2.12.2",
+    "react-vertical-timeline-component": "^3.5.3",
+    "resend": "^4.1.2",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "react-vertical-timeline-component"
+    ],
+    "onlyBuiltDependencies": [
+      "react-vertical-timeline-component"
+    ]
   }
 }
