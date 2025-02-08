@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 import ParticleContainer from "./ParticleContainer";
 const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
 
