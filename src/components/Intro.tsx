@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { SiLeetcode } from "react-icons/si";
+
 import ParticleContainer from "./ParticleContainer";
 const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
 
@@ -57,14 +59,20 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-0 sm:px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-white max-w-[50rem] mx-auto"
+        className="mb-10 mt-4 px-0 sm:px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-white max-w-[50rem] mx-auto text-center"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Priyabrata.</span> I&apos;m a{" "}
-        <span className="font-bold">software engineer</span> and a{" "}
-        <span className="font-bold">Final-year Student</span> residing in Kolkata. I&apos;m currently working with{" "}
-        C++, Golang, Solidity.
+        <span className="font-bold">Hello, I&apos;m Priyabrata.</span> <br />
+        I&apos;m a{" "}
+        <span className="font-bold">
+          final-year Computer Science student
+        </span>{" "}
+        and <br />a <span className="font-bold">software engineer</span> based
+        in Kolkata. <br />I specialize in{" "}
+        <span className="font-bold">C++, Golang, and Solidity</span>, and <br />
+        I enjoy solving challenging problems on{" "}
+        <span className="font-bold">LeetCode</span>.
       </motion.h1>
 
       <motion.div
@@ -90,6 +98,15 @@ export default function Intro() {
         >
           <span className="opacity-70">LinkedIn</span>
           <BsLinkedin className="opacity-70" />
+        </a>
+
+        <a
+          className="group bg-yellow-500 text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
+          href="https://leetcode.com/prybruhta"
+          target="_blank"
+        >
+          <span className="opacity-70">LeetCode</span>
+          <SiLeetcode className="opacity-70" />
         </a>
       </motion.div>
     </section>

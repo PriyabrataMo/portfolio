@@ -4,7 +4,7 @@ import React from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import qutLogo from "@/public/qut-Logo.png";
+import qutLogo from "../../public/techno-logo.jpeg";
 import Image from "next/image";
 
 export default function Education() {
@@ -14,7 +14,7 @@ export default function Education() {
     <motion.section
       id="education"
       ref={ref}
-      className="mb-20 sm:mb-28 scroll-mt-28 w-full md:w-[700px]"
+      className="mb-10 sm:mb-28 scroll-mt-28 w-full md:w-[700px]"
       initial={{
         opacity: 0,
       }}
@@ -36,18 +36,11 @@ export default function Education() {
         </div>
 
         <div>
-          <p className="text-lg font-medium">
-            Bachelor of Information Technology
-          </p>
-          <p>Queensland University of Technology</p>
-          <p className="mt-1">Graduated in 2023</p>
-          <p className="my-1">GPA 6.2/7</p>
-          <ul className="list-disc pl-6">
-            <li>Major in Computer Science</li>
-            <li>Minor in Networks & Security</li>
-            <li>Minor in Mobile Applications</li>
-            <li>Science &amp; Engineering Dean&apos;s List - 2019 &amp; 2021</li>
-          </ul>
+          <p className="text-lg font-medium">Bachelor of Technology</p>
+          <p>Techno Main Salt Lake</p>
+          <p className="mt-1">2021 - 2025</p>
+          <p className="my-1">GPA 8.55 (till 6th sem)</p>
+          <p className="my-1">Branch - Computer Science and Business Systems</p>
         </div>
       </div>
     </motion.section>

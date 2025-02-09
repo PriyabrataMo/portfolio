@@ -1,57 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { links } from "@/lib/data";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+import clsx from "clsx";
+import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between p-4">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900">
-          MyPortfolio
-        </Link>
+    <header className="z-[999] relative">
+      {/* Background Bar */}
+      <motion.div
+        className="fixed top-6 left-1/2 h-[3.5rem] w-[32rem] rounded-full border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 -translate-x-1/2"
+        initial={{ y: -100, x: "-50%", opacity: 0 }}
+        animate={{ y: 0, x: "-50%", opacity: 1 }}
+      ></motion.div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-6">
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-gray-700 hover:text-blue-500">
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-      {isOpen && (
-        <nav className="md:hidden absolute top-full left-0 w-full bg-white shadow-md">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="block py-3 text-center text-gray-700 hover:bg-gray-100"
-              onClick={() => setIsOpen(false)}
+      <nav className="fixed top-[1.75rem] left-1/2 -translate-x-1/2 flex items-center h-[3rem]">
+        <ul className="flex w-[28rem] justify-between text-[0.9rem] font-medium text-gray-500 sm:w-[28rem]">
+          {links.map((link) => (
+            <motion.li
+              className="relative flex items-center justify-center"
+              key={link.hash}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
             >
-              {link.name}
-            </Link>
+              <Link
+                className={clsx(
+                  "flex items-center justify-center px-4 py-2 rounded-full transition hover:text-gray-950 dark:text-gray-300 dark:hover:text-gray-300",
+                  {
+                    "text-gray-950 dark:text-white":
+                      activeSection === link.name,
+                  }
+                )}
+                href={link.hash}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
+              >
+                {link.name}
+
+                {link.name === activeSection && (
+                  <motion.span
+                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                    layoutId="activeSection"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  ></motion.span>
+                )}
+              </Link>
+            </motion.li>
           ))}
-        </nav>
-      )}
+        </ul>
+      </nav>
     </header>
   );
 }
