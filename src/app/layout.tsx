@@ -6,7 +6,7 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 import ThemeContextProvider from "@/context/ThemeContext";
 import { Toaster } from "react-hot-toast";
 import RandomFavicon from "@/components/RandomFavIcon";
-import Head from "next/head";
+// import Head from "next/head";
 import "./globals.css";
 
 const nunito = Nunito({ subsets: ["latin"] });
