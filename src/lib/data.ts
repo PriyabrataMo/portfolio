@@ -2,12 +2,12 @@ import { CgWorkAlt } from "react-icons/cg";
 import pred from "../../public/pred.png";
 import currency from "../../public/currency.png";
 import tasks from "../../public/tasks.png";
-import ozdevsImg from "../../public/ozdevs-two.png";
-import assetTradingImg from "../../public/asset-trading.jpg";
-import techprowlImg from "../../public/techprowl-two.png";
-import taskManagerImg from "../../public/task-manager.png";
-import familyTreeImg from "../../public/bfsproject.jpg";
-import binaryGameImg from "../../public/binary-game.png";
+// import ozdevsImg from "../../public/ozdevs-two.png";
+// import assetTradingImg from "../../public/asset-trading.jpg";
+// import techprowlImg from "../../public/techprowl-two.png";
+// import taskManagerImg from "../../public/task-manager.png";
+// import familyTreeImg from "../../public/bfsproject.jpg";
+// import binaryGameImg from "../../public/binary-game.png";
 
 export const links = [
   {
