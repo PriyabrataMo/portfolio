@@ -75,24 +75,25 @@ export default function Intro() {
         <span className="font-bold">LeetCode</span>.
       </motion.h1>
 
+      {/* Social Links (Centered + Stacked on Mobile, Side-by-Side on Desktop) */}
       <motion.div
-        className="flex flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none px-4 text-lg font-medium mx-auto"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
+        transition={{ delay: 0.1 }}
       >
+        {/* GitHub */}
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
+          className="group w-full sm:w-auto text-center bg-white px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
           href="https://github.com/PriyabrataMo"
           target="_blank"
         >
           GitHub <FaGithub className="opacity-70" />
         </a>
 
+        {/* LinkedIn */}
         <a
-          className="group bg-gray-950 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
+          className="group w-full sm:w-auto text-center bg-gray-950 text-white px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
           href="https://www.linkedin.com/in/priyabrata-mondal/"
           target="_blank"
         >
@@ -100,8 +101,9 @@ export default function Intro() {
           <BsLinkedin className="opacity-70" />
         </a>
 
+        {/* LeetCode */}
         <a
-          className="group bg-yellow-500 text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
+          className="group w-full sm:w-auto text-center bg-yellow-500 text-black px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
           href="https://leetcode.com/prybruhta"
           target="_blank"
         >
