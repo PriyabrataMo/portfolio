@@ -6,6 +6,7 @@ import ThemeSwitch from "@/components/ThemeSwitch";
 import ThemeContextProvider from "@/context/ThemeContext";
 import { Toaster } from "react-hot-toast";
 import RandomFavicon from "@/components/RandomFavIcon";
+import { Analytics } from "@vercel/analytics/react";
 // import Head from "next/head";
 import "./globals.css";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
+        <Analytics />
       </body>
     </html>
   );
