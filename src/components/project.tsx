@@ -4,13 +4,7 @@ import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BiLinkExternal } from "react-icons/bi";
-import {
-  AiFillApi,
-  AiFillGithub,
-  AiFillGoogleCircle,
-  AiFillSetting,
-  AiFillYoutube,
-} from "react-icons/ai";
+import { AiFillApi, AiFillGithub } from "react-icons/ai";
 import { Icon } from "@iconify/react";
 
 type ProjectProps = {
