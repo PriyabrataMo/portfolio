@@ -2,6 +2,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import pred from "../../public/pred.png";
 import currency from "../../public/currency.png";
 import tasks from "../../public/tasks.png";
+import laresume from "../../public/laresume.png";
 // import ozdevsImg from "../../public/ozdevs-two.png";
 // import assetTradingImg from "../../public/asset-trading.jpg";
 // import techprowlImg from "../../public/techprowl-two.png";
@@ -69,6 +70,16 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "LaResume",
+    description:
+      "A resume builder website built with Next.js, allowing users to create, customize, and download professional resumes in multiple formats.",
+    tags: ["Next.js", "TypeScript", "Resume Builder"],
+    icons: ["logos:nextjs", "logos:typescript", "logos:resume"],
+    imageUrl: laresume,
+    githubLink: "https://github.com/shubhamku044/la-resume",
+    demoLink: "https://la-resume.tech",
+  },
+  {
     title: "StackOverflow Tags Predictor",
     description:
       "A model that predicts tags for Stack Overflow questions, simplifying the process of categorization and making questions easier to discover",
@@ -104,7 +115,6 @@ export const projectsData = [
     githubLink: "https://github.com/PriyabrataMo/currency-converter-tui",
     demoLink: "",
   },
- 
 ] as const;
 
 export const skillsData = [
@@ -194,6 +204,4 @@ export const skillsData = [
     name: "Linux",
     icon: "flat-color-icons:linux",
   },
-
-  
 ] as const;

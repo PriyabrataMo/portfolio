@@ -4,7 +4,13 @@ import { useRef } from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BiLinkExternal } from "react-icons/bi";
-import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import {
+  AiFillApi,
+  AiFillGithub,
+  AiFillGoogleCircle,
+  AiFillSetting,
+  AiFillYoutube,
+} from "react-icons/ai";
 import { Icon } from "@iconify/react";
 
 type ProjectProps = {
@@ -77,7 +83,7 @@ export default function Project({
                 rel="noopener noreferrer"
                 className="flex items-center bg-[#111827] text-white py-2 px-4 mr-2 rounded-full hover:scale-105"
               >
-                <AiFillYoutube className="mr-1" /> Demo
+                <AiFillApi className="mr-1" /> Demo
               </a>
             )}
 
