@@ -59,7 +59,7 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-0 sm:px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-white max-w-[50rem] mx-auto text-center"
+        className="mb-10 mt-4 px-0 sm:px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl text-white max-w-[80rem] mx-auto text-center"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -70,8 +70,8 @@ export default function Intro() {
         </span>{" "}
         and <br />a <span className="font-bold">software engineer</span> based
         in Kolkata. <br />I specialize in{" "}
-        <span className="font-bold">C++, Golang, and Solidity</span>, and <br />
-        I enjoy solving challenging problems on{" "}
+        <span className="font-bold">C++, Golang, and NextJS</span>, and <br />I
+        enjoy solving challenging problems on{" "}
         <span className="font-bold">LeetCode</span>.
       </motion.h1>
 

@@ -3,6 +3,7 @@ import pred from "../../public/pred.png";
 import currency from "../../public/currency.png";
 import tasks from "../../public/tasks.png";
 import laresume from "../../public/laresume.png";
+import quotica from "../../public/quotica.png";
 // import ozdevsImg from "../../public/ozdevs-two.png";
 // import assetTradingImg from "../../public/asset-trading.jpg";
 // import techprowlImg from "../../public/techprowl-two.png";
@@ -70,11 +71,35 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Quotica",
+    description:
+      "An AI-powered quote image generator that lets users create and customize beautiful quote images with ease. Offers a one-time lifetime subscription.",
+    tags: ["Next.js", "AI", "Typescript", "Prisma"],
+    icons: [
+      "logos:nextjs-icon",
+      "logos:openai-icon",
+      "logos:typescript-icon",
+      "logos:prisma",
+      "logos:mongodb-icon",
+      "logos:google-gemini",
+    ],
+    imageUrl: quotica,
+    githubLink: "https://github.com/shvmmshr/Quotica", // Replace with actual link if public
+    demoLink: "https://quotica.fun",
+  },
+  {
     title: "LaResume",
     description:
       "A resume builder website built with Next.js, allowing users to create, customize, and download professional resumes in multiple formats.",
-    tags: ["Next.js", "TypeScript", "Resume Builder"],
-    icons: ["logos:nextjs", "logos:typescript", "logos:resume"],
+    tags: ["Next.js", "TypeScript", "AWS", "prisma", "mongodb"],
+    icons: [
+      "logos:nextjs-icon",
+      "logos:typescript-icon",
+      "logos:aws",
+      "logos:prisma",
+      "logos:mongodb-icon",
+      "logos:docker-icon",
+    ],
     imageUrl: laresume,
     githubLink: "https://github.com/shubhamku044/la-resume",
     demoLink: "https://la-resume.tech",
@@ -132,8 +157,8 @@ export const skillsData = [
     icon: "logos:go",
   },
   {
-    name: "Java",
-    icon: "logos:java",
+    name: "NextJS",
+    icon: "logos:nextjs-icon",
   },
   {
     name: "JavaScript",
@@ -146,10 +171,6 @@ export const skillsData = [
   {
     name: "Python",
     icon: "logos:python",
-  },
-  {
-    name: "Solidity",
-    icon: "logos:solidity",
   },
 
   // Backend Technologies
@@ -203,5 +224,9 @@ export const skillsData = [
   {
     name: "Linux",
     icon: "flat-color-icons:linux",
+  },
+  {
+    name: "Prisma",
+    icon: "logos:prisma",
   },
 ] as const;
