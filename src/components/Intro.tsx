@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
-import { SiLeetcode } from "react-icons/si";
+import { SiReactiveresume } from "react-icons/si";
 
 import ParticleContainer from "./ParticleContainer";
 const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
@@ -32,7 +32,7 @@ export default function Intro() {
             }}
           >
             <Image
-              src={githubdp}
+              src="https://avatars.githubusercontent.com/u/95865224?v=4"
               alt="Ricardo portrait"
               width="192"
               height="192"
@@ -100,15 +100,13 @@ export default function Intro() {
           <span className="opacity-70">LinkedIn</span>
           <BsLinkedin className="opacity-70" />
         </a>
-
-        {/* LeetCode */}
         <a
-          className="group w-full sm:w-auto text-center bg-yellow-500 text-black px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
-          href="https://leetcode.com/prybruhta"
+          className="group w-full sm:w-auto text-center bg-gray-500 text-black px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
+          href="https://drive.google.com/file/d/1LtI3msuJnwT1zBfS0JBk2ImYq08EMyU5/view?usp=sharing"
           target="_blank"
         >
-          <span className="opacity-70">LeetCode</span>
-          <SiLeetcode className="opacity-70" />
+          <span className="opacity-70">Resume</span>
+          <SiReactiveresume className="opacity-70" />
         </a>
       </motion.div>
     </section>
