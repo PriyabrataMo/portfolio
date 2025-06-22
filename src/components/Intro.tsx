@@ -9,7 +9,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { SiReactiveresume } from "react-icons/si";
 
 import ParticleContainer from "./ParticleContainer";
-const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
+// const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
