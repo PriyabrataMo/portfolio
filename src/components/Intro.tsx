@@ -102,7 +102,7 @@ export default function Intro() {
         </a>
         <a
           className="group w-full sm:w-auto text-center bg-gray-500 text-black px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
-          href="https://drive.google.com/file/d/1LtI3msuJnwT1zBfS0JBk2ImYq08EMyU5/view?usp=sharing"
+          href="https://drive.google.com/file/d/1JyWDDgdl7JF_1NPjeWp0M-TkmUyuoA_b/view?usp=sharing"
           target="_blank"
         >
           <span className="opacity-70">Resume</span>
