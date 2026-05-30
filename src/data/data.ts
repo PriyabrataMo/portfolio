@@ -41,9 +41,9 @@ export const skillsData = [
   {
     category: "Observability",
     skills: [
-      { name: "Langfuse", icon: "material-symbols:analytics" },
-      { name: "SigNoz", icon: "material-symbols:monitor-heart" },
-      { name: "Structured Logging", icon: "material-symbols:text-snippet" },
+      { name: "Langfuse", icon: "simple-icons:langfuse" },
+      { name: "SigNoz", icon: "simple-icons:signoz" },
+      { name: "OpenTelemetry", icon: "simple-icons:opentelemetry" },
     ],
   },
   {
@@ -218,7 +218,7 @@ export const educationData = [
 export const projectsData = [
   {
     title: "LaResume",
-    href: "https://la-resume.tech",
+    href: "https://la-resume.com",
     dates: "2024",
     active: true,
     description:
@@ -240,7 +240,7 @@ export const projectsData = [
       { name: "Prisma", icon: "logos:prisma" },
     ],
     links: [
-      { type: "Website", href: "https://la-resume.tech", icon: "globe" },
+      { type: "Website", href: "https://la-resume.com", icon: "globe" },
       {
         type: "Github",
         href: "https://github.com/shubhamku044/la-resume",
@@ -252,7 +252,7 @@ export const projectsData = [
   },
   {
     title: "Quotica",
-    href: "https://quotica.fun",
+    href: "https://quotica.priyabratamondal.com",
     dates: "2024",
     active: true,
     description:
@@ -274,7 +274,7 @@ export const projectsData = [
       { name: "Prisma", icon: "logos:prisma" },
     ],
     links: [
-      { type: "Website", href: "https://quotica.fun", icon: "globe" },
+      { type: "Website", href: "https://quotica.priyabratamondal.com", icon: "globe" },
       {
         type: "Github",
         href: "https://github.com/shvmmshr/Quotica",

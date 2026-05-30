@@ -72,7 +72,9 @@ export function Skills({ delay = 0 }: SkillsProps) {
                   {"icon" in skill && skill.icon && (
                     <Icon
                       icon={skill.icon}
-                      className="text-3xl sm:text-4xl mb-1 sm:mb-2 flex-shrink-0"
+                      width={32}
+                      height={32}
+                      className="mb-1 sm:mb-2 flex-shrink-0"
                     />
                   )}
                 </motion.div>
