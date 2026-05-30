@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { useMemo } from "react";
 
 interface BlurFadeTextProps {
@@ -17,6 +17,7 @@ interface BlurFadeTextProps {
   yOffset?: number;
   animateByCharacter?: boolean;
 }
+
 const BlurFadeText = ({
   text,
   className,
@@ -45,12 +46,7 @@ const BlurFadeText = ({
             animate="visible"
             exit="hidden"
             variants={combinedVariants}
-            transition={{
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay,
-              ease: "easeOut",
-            }}
+            transition={{ delay, ease: "easeOut" }}
             className={cn("inline-block", className)}
           >
             {text}
@@ -71,12 +67,7 @@ const BlurFadeText = ({
               animate="visible"
               exit="hidden"
               variants={combinedVariants}
-              transition={{
-                repeat: Infinity,
-              repeatType: "reverse",
-                delay: delay + i * characterDelay,
-                ease: "easeOut",
-              }}
+              transition={{ delay: delay + i * characterDelay, ease: "easeOut" }}
               className={cn("inline-block", className)}
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
@@ -96,12 +87,7 @@ const BlurFadeText = ({
           animate="visible"
           exit="hidden"
           variants={combinedVariants}
-          transition={{
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay,
-            ease: "easeOut",
-          }}
+          transition={{ delay, ease: "easeOut" }}
           className={cn("inline-block", className)}
         >
           {text}
