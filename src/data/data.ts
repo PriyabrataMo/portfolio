@@ -132,7 +132,7 @@ export const experiencesData = [
     href: "https://qad.com",
     location: "Bengaluru, India",
     title: "AI/Agent Engineer",
-    logoUrl: "/qad-logo.png",
+    logoUrl: "/qad-logo.jpeg",
     start: "Dec 2025",
     end: "Present",
     description: [
@@ -158,7 +158,7 @@ export const experiencesData = [
     href: "https://qad.com",
     location: "Remote",
     title: "Junior Data Scientist",
-    logoUrl: "/kavida-logo.png",
+    logoUrl: "/kavida-logo.jpeg",
     start: "Aug 2025",
     end: "Nov 2025",
     description: [
@@ -184,7 +184,7 @@ export const experiencesData = [
     href: "https://grouple.in",
     location: "Mumbai, Maharashtra, India",
     title: "Backend Developer Intern",
-    logoUrl: "/grouple-logo.png",
+    logoUrl: "/grouple-logo.jpeg",
     start: "Apr 2025",
     end: "Jun 2025",
     description: [
