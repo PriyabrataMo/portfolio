@@ -16,19 +16,18 @@ const fontSans = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(personalData.url),
-  title: {
-    default: "Priyabrata Mondal | AI/Agent Engineer",
-    template: `%s | ${personalData.name}`,
+  alternates: {
+    canonical: personalData.url,
   },
-  description: personalData.description,
   openGraph: {
-    title: personalData.name,
-    description: personalData.description,
-    url: personalData.url,
-    siteName: personalData.name,
-    locale: "en_US",
-    type: "website",
+    images: [
+      {
+        url: "/avatar.jpg",
+        width: 460,
+        height: 460,
+        alt: personalData.name,
+      },
+    ],
   },
 };
 
