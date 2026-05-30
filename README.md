@@ -1,5 +1,5 @@
 # Portfolio Website
-Welcome to my professional portfolio website built with [Next.js](https://nextjs.org). This site showcases my projects, skills, and journey as a software engineer.
+Welcome to my professional portfolio website built with [Next.js](https://nextjs.org) and [Bun](https://bun.sh). This site showcases my projects, skills, and journey as a software engineer.
 
 ## Live Site
 
@@ -7,20 +7,44 @@ Visit my live portfolio at [priyabratamondal.com](https://priyabratamondal.com).
 
 ## Getting Started
 
-To run the project locally:
+This project uses **Bun** as its runtime and package manager.
 
-1. Clone the repository.
-2. Install dependencies using npm, yarn, pnpm, or bun.
-3. Start the development server:
+### Prerequisites
+
+Install Bun if you haven't already:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+curl -fsSL https://bun.sh/install | bash
+```
+
+### Install Dependencies
+
+```bash
+bun install
+```
+
+### Development
+
+```bash
 bun dev
+```
+
+### Build
+
+```bash
+bun run build
+```
+
+### Start Production Server
+
+```bash
+bun start
+```
+
+### Lint
+
+```bash
+bun lint
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.

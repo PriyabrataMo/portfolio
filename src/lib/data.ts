@@ -1,9 +1,9 @@
 import { CgWorkAlt } from "react-icons/cg";
-import pred from "../../public/pred.png";
 import currency from "../../public/currency.png";
-import tasks from "../../public/tasks.png";
 import laresume from "../../public/laresume.png";
+import pred from "../../public/pred.png";
 import quotica from "../../public/quotica.png";
+import tasks from "../../public/tasks.png";
 // import ozdevsImg from "../../public/ozdevs-two.png";
 // import assetTradingImg from "../../public/asset-trading.jpg";
 // import techprowlImg from "../../public/techprowl-two.png";

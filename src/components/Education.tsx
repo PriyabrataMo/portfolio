@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
-import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useSectionInView } from "@/lib/hooks";
 import qutLogo from "../../public/techno-logo.jpeg";
-import Image from "next/image";
+import SectionHeading from "./SectionHeading";
 
 export default function Education() {
   const { ref } = useSectionInView("Education");
