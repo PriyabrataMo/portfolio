@@ -132,7 +132,7 @@ export const experiencesData = [
     href: "https://qad.com",
     location: "Bengaluru, India",
     title: "AI/Agent Engineer",
-    logoUrl: "",
+    logoUrl: "/qad-logo.png",
     start: "Dec 2025",
     end: "Present",
     description: [
@@ -158,7 +158,7 @@ export const experiencesData = [
     href: "https://qad.com",
     location: "Remote",
     title: "Junior Data Scientist",
-    logoUrl: "",
+    logoUrl: "/kavida-logo.png",
     start: "Aug 2025",
     end: "Nov 2025",
     description: [
@@ -179,6 +179,21 @@ export const experiencesData = [
       "uv",
     ],
   },
+  {
+    company: "Grouple",
+    href: "https://grouple.in",
+    location: "Mumbai, Maharashtra, India",
+    title: "Backend Developer Intern",
+    logoUrl: "/grouple-logo.png",
+    start: "Apr 2025",
+    end: "Jun 2025",
+    description: [
+      "Built and maintained backend services for Grouple's group dining and reservation platform.",
+      "Developed REST APIs with Node.js and Express.js for booking management and user workflows.",
+      "Integrated third-party services and worked with AWS for deployment and infrastructure.",
+    ],
+    skills: ["Node.js", "Express.js", "AWS", "React.js", "REST APIs"],
+  },
 ] as const;
 
 export const educationData = [
@@ -186,7 +201,7 @@ export const educationData = [
     school: "Techno Main Salt Lake",
     href: "https://www.technomain.edu.in/",
     degree: "B.Tech in Computer Science and Business Systems",
-    logoUrl: "",
+    logoUrl: "/techno-logo.jpeg",
     start: "Oct 2021",
     end: "May 2025",
     description: [
