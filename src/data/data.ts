@@ -11,7 +11,7 @@ export const personalData = {
     "AI/Agent Engineer at QAD Inc. I build LLM-powered agentic workflows for enterprise supply chain automation.",
   summary:
     "I'm an **AI/Agent Engineer at QAD Inc.**, building LLM-powered agentic workflows for supply chain automation, resolving 55+ production tickets across ERP agent development, bug fixes, and system design. Previously at **Kavida AI** (acquired by QAD), I migrated agent infrastructure from LangChain to native Python with LiteLLM and implemented Langfuse + SigNoz observability. I hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55). A competitive programmer — **Guardian on LeetCode (top 1%, 2178 rating)** and **4-star on CodeChef (1917 rating)** — with 2500+ problems solved across platforms.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/95865224?v=4",
+  avatarUrl: "/avatar.jpg",
 } as const;
 
 export const skillsData = [
