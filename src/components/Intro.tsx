@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { useSectionInView } from "@/lib/hooks";
 import { SiReactiveresume } from "react-icons/si";
+import { useSectionInView } from "@/lib/hooks";
 
 import ParticleContainer from "./ParticleContainer";
 // const githubdp = "/githubdp.jpg"; // ✅ Public images can be accessed directly
@@ -65,9 +64,7 @@ export default function Intro() {
       >
         <span className="font-bold">Hello, I&apos;m Priyabrata.</span> <br />
         I&apos;m a{" "}
-        <span className="font-bold">
-          final-year Computer Science student
-        </span>{" "}
+        <span className="font-bold">final-year Computer Science student</span>{" "}
         and <br />a <span className="font-bold">software engineer</span> based
         in Kolkata. <br />I specialize in{" "}
         <span className="font-bold">C++, Golang, and NextJS</span>, and <br />I
@@ -87,6 +84,7 @@ export default function Intro() {
           className="group w-full sm:w-auto text-center bg-white px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack text-gray-950"
           href="https://github.com/PriyabrataMo"
           target="_blank"
+          rel="noopener"
         >
           GitHub <FaGithub className="opacity-70" />
         </a>
@@ -96,6 +94,7 @@ export default function Intro() {
           className="group w-full sm:w-auto text-center bg-gray-950 text-white px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-white border-opacity-40"
           href="https://www.linkedin.com/in/priyabrata-mondal/"
           target="_blank"
+          rel="noopener"
         >
           <span className="opacity-70">LinkedIn</span>
           <BsLinkedin className="opacity-70" />
@@ -104,6 +103,7 @@ export default function Intro() {
           className="group w-full sm:w-auto text-center bg-gray-500 text-black px-7 py-3 flex items-center justify-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-105 transition border-2 border-black border-opacity-40"
           href="https://drive.google.com/file/d/10VgdDys3LelJv9fFKnWiwhe28cB5UYHg/view?usp=sharing"
           target="_blank"
+          rel="noopener"
         >
           <span className="opacity-70">Resume</span>
           <SiReactiveresume className="opacity-70" />

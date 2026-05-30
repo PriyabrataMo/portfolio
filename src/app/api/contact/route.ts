@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Invalid request", message: error },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

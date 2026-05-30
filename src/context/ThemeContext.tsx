@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState, createContext, useContext } from "react";
+import type React from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 

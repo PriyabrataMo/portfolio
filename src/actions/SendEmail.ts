@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Resend } from "resend";
-import { validateString, getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/email/ContactFormEmail";
+import { getErrorMessage, validateString } from "@/lib/utils";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -23,7 +23,7 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  let data;
+  let data: Awaited<ReturnType<typeof resend.emails.send>> | undefined;
   try {
     data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",

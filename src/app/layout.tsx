@@ -1,12 +1,13 @@
 // filepath: /Users/priyabrata/Desktop/portfolio/src/app/layout.tsx
-import Header from "@/components/Header";
-import { Nunito } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
-import ThemeSwitch from "@/components/ThemeSwitch";
-import ThemeContextProvider from "@/context/ThemeContext";
-import { Toaster } from "react-hot-toast";
-import RandomFavicon from "@/components/RandomFavIcon";
+
 import { Analytics } from "@vercel/analytics/react";
+import { Nunito } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import Header from "@/components/Header";
+import RandomFavicon from "@/components/RandomFavIcon";
+import ThemeSwitch from "@/components/ThemeSwitch";
+import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
+import ThemeContextProvider from "@/context/ThemeContext";
 // import Head from "next/head";
 import "./globals.css";
 

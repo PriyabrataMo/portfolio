@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef } from "react";
-import Image, { StaticImageData } from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { BiLinkExternal } from "react-icons/bi";
-import { AiFillApi, AiFillGithub } from "react-icons/ai";
 import { Icon } from "@iconify/react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image, { type StaticImageData } from "next/image";
+import { useRef } from "react";
+import { AiFillApi, AiFillGithub } from "react-icons/ai";
+import { BiLinkExternal } from "react-icons/bi";
 
 type ProjectProps = {
   title: string;
@@ -51,8 +51,8 @@ export default function Project({
             <p className="font-bold text-gray-500 dark:text-white/70">
               Made with:{" "}
             </p>
-            {icons.map((icon, iconIndex) => (
-              <Icon key={iconIndex} icon={icon} className="mr-3 text-2xl" />
+            {icons.map((icon) => (
+              <Icon key={icon} icon={icon} className="mr-3 text-2xl" />
             ))}
           </ul>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70 mb-3">
