@@ -1,21 +1,9 @@
-// filepath: /Users/priyabrata/Desktop/portfolio/src/app/layout.tsx
-
-import { Analytics } from "@vercel/analytics/react";
-import { Nunito } from "next/font/google";
-import { Toaster } from "react-hot-toast";
-import Header from "@/components/Header";
-import RandomFavicon from "@/components/RandomFavIcon";
-import ThemeSwitch from "@/components/ThemeSwitch";
-import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
-import ThemeContextProvider from "@/context/ThemeContext";
-// import Head from "next/head";
+import type { Metadata } from "next";
 import "./globals.css";
 
-const nunito = Nunito({ subsets: ["latin"] });
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Priyabrata Mondal",
-  description: "Software Engineer.",
+  description: "AI/Agent Engineer building LLM-powered agentic workflows.",
 };
 
 export default function RootLayout({
@@ -24,24 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <head>
-        <RandomFavicon />
-      </head>
-      <body
-        className={`${nunito.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
-        <Analytics />
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <body>{children}</body>
     </html>
   );
 }

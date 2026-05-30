@@ -1,24 +1,90 @@
 "use client";
 
-import React from "react";
-import { projectsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
-import Project from "./project";
-import SectionHeading from "./SectionHeading";
+import { useState } from "react";
+import BlurFade from "@/components/magicui/blur-fade";
+import { ProjectCard } from "@/components/project-card";
+import { ProjectModal } from "@/components/project-modal";
+import { projectsData } from "@/data/data";
 
-export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.1);
+interface ProjectsProps {
+  delay?: number;
+}
+
+export function Projects({ delay = 0 }: ProjectsProps) {
+  const [selectedProject, setSelectedProject] = useState<{
+    title: string;
+    description: string;
+    detailedDescription?: string;
+    keyFeatures?: readonly string[];
+    dates: string;
+    technologies: readonly { name: string; icon?: string }[];
+    images?: string[];
+    video?: string;
+    links?: readonly {
+      icon: React.ReactNode;
+      type: string;
+      href: string;
+    }[];
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project: any) => {
+    // Convert project data to match ProjectModal interface
+    const modalProject = {
+      title: project.title,
+      description: project.description,
+      detailedDescription: project.detailedDescription,
+      keyFeatures: project.keyFeatures,
+      dates: project.dates,
+      technologies: project.technologies,
+      images: project.images,
+      video: project.video,
+      links: project.links,
+    };
+    setSelectedProject(modalProject);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionHeading>My projects</SectionHeading>
-      <div>
-        {projectsData.map((project) => (
-          <React.Fragment key={project.title}>
-            <Project {...project} />
-          </React.Fragment>
-        ))}
+    <section id="projects">
+      <div className="space-y-12 w-full py-12">
+        <BlurFade delay={delay}>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter">My Projects</h2>
+          </div>
+        </BlurFade>
+        <div className="grid gap-5 max-w-[800px] mx-auto">
+          {projectsData.map((project, id) => (
+            <BlurFade key={project.title} delay={delay + 0.01 + id * 0.05}>
+              <ProjectCard
+                href={project.href}
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                dates={project.dates}
+                image={project.images?.[0]}
+                video={project.video}
+                links={project.links}
+                technologies={project.technologies}
+                onClick={() => handleProjectClick(project)}
+              />
+            </BlurFade>
+          ))}
+        </div>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          project={selectedProject}
+        />
+      )}
     </section>
   );
 }

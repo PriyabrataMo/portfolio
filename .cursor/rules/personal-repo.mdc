@@ -1,0 +1,22 @@
+---
+description: Personal portfolio repo - use PriyabrataMo GitHub account
+alwaysApply: true
+---
+
+# Personal Repository
+
+This is a **personal portfolio** repo owned by the `PriyabrataMo` GitHub account.
+
+## Git Identity
+
+All commits and git operations must use:
+- **Name**: PriyabrataMo
+- **Email**: priyabrata8558@gmail.com
+- **SSH host**: `github.com-priyo` (maps to `~/.ssh/id_ed25519_personal`)
+- **Remote**: `git@github.com-priyo:PriyabrataMo/portfolio.git`
+
+## Rules
+
+- Never suggest using `priyabratakavida` or `priyabrata@kavida.ai` for commits in this repo
+- Never change the remote URL to use `github.com` directly — always use `github.com-priyo`
+- When creating commits or pushing, confirm the identity is `PriyabrataMo`
