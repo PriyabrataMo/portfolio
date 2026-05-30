@@ -247,7 +247,7 @@ export const projectsData = [
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/laresume.png"] as string[],
     video: "",
   },
   {
@@ -281,7 +281,7 @@ export const projectsData = [
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/quotica.png"] as string[],
     video: "",
   },
   {
@@ -314,7 +314,7 @@ export const projectsData = [
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/pred.png"] as string[],
     video: "",
   },
   {
@@ -339,7 +339,7 @@ export const projectsData = [
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/tasks.png"] as string[],
     video: "",
   },
   {
@@ -364,7 +364,7 @@ export const projectsData = [
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/currency.png"] as string[],
     video: "",
   },
 ] as const;
