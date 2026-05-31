@@ -26,6 +26,17 @@ export function Contact({ delay = 0 }: ContactProps) {
               </a>{" "}
               or through this form.
             </p>
+            <p className="text-muted-foreground max-w-lg mx-auto mt-2">
+              Want to read my thoughts on tech?{" "}
+              <a
+                className="underline font-medium text-foreground"
+                href="https://medium.com/@priyabrata8558"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check out my blog on Medium →
+              </a>
+            </p>
           </div>
         </BlurFade>
 

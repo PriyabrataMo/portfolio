@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon } from "lucide-react";
+import { HomeIcon, NotebookPenIcon } from "lucide-react";
 
 export const personalData = {
   name: "Priyabrata Mondal",
@@ -99,6 +99,7 @@ export const skillsData = [
 
 export const navbarData = [
   { href: "/", icon: HomeIcon, label: "Home" },
+  { href: "/blog", icon: NotebookPenIcon, label: "Blog" },
 ] as const;
 
 export const contactData = {
@@ -344,23 +345,24 @@ export const projectsData = [
   },
   {
     title: "Currency Converter TUI",
-    href: "https://github.com/PriyabrataMo/currency-converter-tui",
+    href: "https://github.com/PriyabrataMo/currency",
     dates: "2023",
     active: true,
     description:
-      "Terminal-based currency converter with a rich TUI built in Golang, with real-time exchange rates.",
+      "Terminal-based currency converter with a rich TUI built in Golang, with real-time exchange rates. Installable via Homebrew.",
     detailedDescription:
-      "A terminal-based currency converter built with a Golang TUI library, fetching live exchange rates for quick multi-currency conversions.",
+      "A terminal-based currency converter built with a Golang TUI library, fetching live exchange rates for quick multi-currency conversions. Distributed via a custom Homebrew tap.",
     keyFeatures: [
       "Rich terminal UI with Golang TUI library",
-      "Real-time exchange rate fetching",
+      "Real-time exchange rate fetching via ExchangeRatesAPI",
+      "Installable via Homebrew (`brew install currency`)",
       "Support for multiple currency pairs",
     ],
     technologies: [{ name: "Go", icon: "logos:go" }],
     links: [
       {
         type: "Github",
-        href: "https://github.com/PriyabrataMo/currency-converter-tui",
+        href: "https://github.com/PriyabrataMo/currency",
         icon: "github",
       },
     ],
