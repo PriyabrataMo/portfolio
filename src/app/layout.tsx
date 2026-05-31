@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "AI/Agent Engineer at QAD Inc. building LLM-powered agentic workflows for enterprise supply chain automation.",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Priyabrata Mondal | AI/Agent Engineer",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Priyabrata Mondal | AI/Agent Engineer",
     description:
       "AI/Agent Engineer at QAD Inc. building LLM-powered agentic workflows for enterprise supply chain automation.",
-    images: ["/opengraph-image.png"],
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

@@ -19,16 +19,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: personalData.url,
   },
-  openGraph: {
-    images: [
-      {
-        url: "/avatar.jpg",
-        width: 460,
-        height: 460,
-        alt: personalData.name,
-      },
-    ],
-  },
 };
 
 export default function V2Layout({ children }: { children: React.ReactNode }) {
