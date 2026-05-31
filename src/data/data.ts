@@ -10,7 +10,7 @@ export const personalData = {
   description:
     "AI/Agent Engineer at QAD Inc. I build LLM-powered agentic workflows for enterprise supply chain automation.",
   summary:
-    "I'm an **AI/Agent Engineer at QAD Inc.**, building LLM-powered agentic workflows for supply chain automation, resolving 55+ production tickets across ERP agent development, bug fixes, and system design. Previously at **Kavida AI** (acquired by QAD), I migrated agent infrastructure from LangChain to native Python with LiteLLM and implemented Langfuse + SigNoz observability. I hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55). A competitive programmer — **Guardian on LeetCode (top 1%, 2178 rating)** and **4-star on CodeChef (1917 rating)** — with 2500+ problems solved across platforms.",
+    "AI/Agent Engineer at **QAD Inc.**, building production-grade LLM applications and agentic systems for ERP and supply chain automation. My work spans agent architecture, evaluation frameworks, observability, workflow reliability, and performance optimization. Previously at **Kavida AI**, I helped launch Agent Maxi by redesigning its core architecture, enabling scalable multi-agent workflows, real-time reasoning streams, and enterprise-ready observability.\n\nI enjoy solving problems at the intersection of AI systems, backend engineering, and distributed workflows, with a focus on building reliable, scalable products that deliver measurable business impact. Graduated in Computer Science from **Techno Main Salt Lake** (CGPA 8.55), ranked **2nd in the department**. Competitive programmer with **2500+ problems** solved across platforms, **Guardian on LeetCode** (2178) and **4★ on CodeChef** (1917).",
   avatarUrl: "/avatar.jpg",
 } as const;
 
@@ -137,10 +137,9 @@ export const experiencesData = [
     start: "Dec 2025",
     end: "Present",
     description: [
-      "Architected and maintained LLM-powered agentic workflows for supply chain automation, resolving 55+ production tickets across 5 Jira boards spanning agent development, bug fixes, and system design.",
-      "Debugged and hardened ERP agents (PO creation, production order close, file mapping) — fixed critical issues like bulk-action safety guards, missing API response fields, and inaccurate cost analysis feedback for enterprise QAD Adaptive ERP customers.",
-      "Built a JQ-based schema query tool for the file mapping agent, replacing 2.5MB inline schema injection with on-demand tool calls — reducing token usage per batch by over 80%.",
-      "Designed automated regression pipelines for agent quality validation, including eval suites comparing mapping accuracy between inline-schema and tool-based approaches.",
+      "Improved the reliability and production readiness of ERP automation agents (PO creation, production order closure, and file mapping) by resolving critical workflow, validation, and data integrity issues for enterprise QAD Adaptive ERP customers.",
+      "Optimized the file mapping agent by introducing on-demand schema retrieval, reducing token consumption by over 80% per batch and improving scalability for complex data mappings.",
+      "Developed automated agent evaluation and regression testing frameworks to validate workflow accuracy, tool usage, and response quality before production deployments.",
       "Replaced Lambda-based invocations with direct HTTP APIs for alert creation, improving cross-environment reliability (dev, preprod, prod) and eliminating deployment blockers.",
     ],
     skills: [
@@ -163,11 +162,10 @@ export const experiencesData = [
     start: "Aug 2025",
     end: "Nov 2025",
     description: [
-      "Migrated the Agent Maxi setup from LangChain chains to native Python with LiteLLM, achieving streaming SSE for multi-agent reasoning/thoughts and reducing framework overhead.",
-      "Implemented Langfuse observability for hierarchical LLM tracing without LangChain dependency, and added SigNoz tracing for route-level API observability in production.",
-      "Migrated 3 business-critical services (procurement change monitor, RFQ monitor, quotation change monitor) from scriptr-worker into KavidaAgentUX monorepo.",
+      "Led the redesign of Agent Maxi's core agent architecture to support large-scale enterprise customers, replacing LangChain chains with a native Python + LiteLLM implementation. Enabled real-time streaming SSE for multi-agent reasoning, improved observability, and significantly reduced framework overhead to support production-scale workloads.",
+      "Implemented Langfuse observability for end-to-end LLM tracing across multi-agent workflows and integrated SigNoz for route-level API monitoring and production observability.",
+      "Redesigned the architecture of three business-critical monitoring services, consolidating duplicated logic, optimizing database connectivity through memoized resource initialization, and reducing failure points to improve performance and operational stability.",
       "Developed AI-powered news article scraping pipeline for supplier risk intelligence.",
-      "Migrated copilot to uv package manager and implemented authentication and conversation thread management.",
     ],
     skills: [
       "Python",
@@ -184,16 +182,17 @@ export const experiencesData = [
     company: "Grouple",
     href: "https://grouple.in",
     location: "Mumbai, Maharashtra, India",
-    title: "Backend Developer Intern",
+    title: "Full Stack Developer Intern",
     logoUrl: "/grouple-logo.jpeg",
     start: "Apr 2025",
     end: "Jun 2025",
     description: [
-      "Built and maintained backend services for Grouple's group dining and reservation platform.",
-      "Developed REST APIs with Node.js and Express.js for booking management and user workflows.",
-      "Integrated third-party services and worked with AWS for deployment and infrastructure.",
+      "Revamped the homepage using Next.js and Tailwind CSS, significantly improving load time and UI responsiveness.",
+      "Fixed critical bugs in the email service responsible for end-user communication and improved navigation and user interaction flow.",
+      "Deployed the website to a custom domain via AWS EC2 with a CI/CD pipeline, and configured NGINX for efficient serving with caching, compression, and routing rules.",
+      "Worked with AWS RDS for database management, optimized queries, and cleaned the database by removing redundant entries and dropping unused tables.",
     ],
-    skills: ["Node.js", "Express.js", "AWS", "React.js", "REST APIs"],
+    skills: ["Next.js", "Tailwind CSS", "Node.js", "AWS EC2", "NGINX", "AWS RDS", "CI/CD"],
   },
 ] as const;
 
@@ -201,16 +200,16 @@ export const educationData = [
   {
     school: "Techno Main Salt Lake",
     href: "https://www.technomain.edu.in/",
-    degree: "B.Tech in Computer Science and Business Systems",
+    degree: "B.Tech — Major: Computer Science · Minor: Business Systems",
     logoUrl: "/techno-logo.jpeg",
     start: "Oct 2021",
     end: "May 2025",
     description: [
-      "CGPA: 8.55",
+      "CGPA: 8.55 — Ranked 2nd in the department",
       "Selected for Amazon Machine Learning Summer School 2024",
       "Qualified for Round 2 in the Meta Hacker Cup 2024",
-      "Guardian on LeetCode (top 1%, 2178 rating) — ranked in top 1% globally",
-      "4-star on CodeChef (1917 rating) — ranked in top 5000 globally",
+      "Guardian on LeetCode (top 1%, 2178 rating)",
+      "4★ on CodeChef (1917 rating)",
       "2500+ DSA problems solved across coding platforms",
     ],
   },
