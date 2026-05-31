@@ -4,7 +4,7 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { personalData } from "@/data/data";
-import { ArrowRight, Link as LinkIcon } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
 
 interface HeroProps {
@@ -39,6 +39,12 @@ export function Hero({ delay = 0 }: HeroProps) {
                 </>
               }
             />
+            <BlurFade delay={delay + 0.02}>
+              <span className="inline-flex items-center gap-1 text-sm text-muted-foreground">
+                <MapPin className="size-3" />
+                {personalData.location}
+              </span>
+            </BlurFade>
           </div>
           <BlurFade delay={delay}>
             <Avatar className="size-28 border">
