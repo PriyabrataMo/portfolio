@@ -38,19 +38,19 @@ export const metadata: Metadata = {
       "AI/Agent Engineer at QAD Inc. building LLM-powered agentic workflows for enterprise supply chain automation.",
     images: [
       {
-        url: "/avatar.jpg",
-        width: 460,
-        height: 460,
-        alt: "Priyabrata Mondal",
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Priyabrata Mondal | AI/Agent Engineer",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Priyabrata Mondal | AI/Agent Engineer",
     description:
       "AI/Agent Engineer at QAD Inc. building LLM-powered agentic workflows for enterprise supply chain automation.",
-    images: ["/avatar.jpg"],
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
