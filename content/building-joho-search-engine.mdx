@@ -1,0 +1,111 @@
+---
+title: "Building a Search Engine From Scratch"
+publishedAt: "2026-06-27"
+summary: "I built Joho, a search engine from the ground up - a C++ retrieval core, an ML re-ranking pipeline, and a UI that shows its work. Here is the whole story in plain English, with the numbers."
+tags: ["Search", "Systems", "Machine Learning"]
+---
+
+You can read about how search engines work for years and still not really understand them. So instead of reading, I built one.
+
+It is called **Joho** (情報 - Japanese for "information"), and it is a working search engine assembled the same way a search engineer actually builds one: piece by piece, measuring at every step. This post is the story of how it came together, told in plain English. No prior knowledge of search needed.
+
+The mental model that helps most: think of a single search as a **relay race**. You type a query, and it gets handed from one specialist to the next - a fast keyword matcher, then a meaning-matcher, then a careful final judge - until a good answer comes out the other end. Here is each runner in that race, in the order I built them.
+
+## 1. Teaching a computer to find words, fast
+
+Every search engine starts with one question: _which documents contain these words?_ Checking all of them one by one is hopeless at scale, so the first thing you build is an **inverted index**.
+
+> An inverted index is the index at the back of a textbook. Instead of reading all 500 pages to find "mitochondria," you flip to the index and it tells you exactly which pages.
+
+Once you can find matching documents, you have to score them. For that I used **BM25**, the workhorse ranking formula of classic search. Think of it as a recipe that rates how strongly a document is "about" your query: rare words count for more than common ones, and a document does not win just by repeating a word 100 times (it has diminishing returns built in).
+
+This C++ core indexed the full benchmark corpus - **8,841,823 passages - in about 108 seconds**.
+
+## 2. Helping you type
+
+Before you even finish typing, a good search box is already helping. I added two things:
+
+- **Autocomplete** - finishing your word using the most popular matches (built on a weighted trie).
+- **Spell correction** - the "did you mean?" feature that catches typos.
+
+These are small touches, but they are what makes a search box feel alive. It is the friend who finishes your sentence, and the one who hears "teh" and knows you meant "the."
+
+## 3. The speed trick: skip the documents that cannot win
+
+Here is the first place it got genuinely interesting. When you only want the top 10 results, scoring all 8.8 million documents for every query is wasteful. There is a classic algorithm called **WAND** that fixes this.
+
+> You are looking for the 10 tallest people in a stadium. Once you have 10 candidates over 6'5", you stop measuring anyone who obviously could not beat them. Same answer, a fraction of the work.
+
+WAND does exactly that: it keeps a running "score to beat" and uses each search term's maximum possible score to skip whole blocks of documents that _provably_ cannot crack the top results - without ever scoring them.
+
+The catch with any optimization like this is: did it change the answers? So I benchmarked WAND against the brute-force "score everything" approach on all 8.8M passages, across three different result-set sizes, and graded both for quality.
+
+| Top-k | Brute force | WAND | Speedup | Quality (MRR@10) |
+| ----- | ----------- | ---- | ------- | ---------------- |
+| 10    | 87.4 ms/query | 29.2 ms/query | **3.0×** | 0.1821 (identical) |
+| 100   | 89.8 ms/query | 42.6 ms/query | **2.1×** | 0.1821 (identical) |
+| 1000  | 90.3 ms/query | 69.1 ms/query | **1.3×** | 0.1821 (identical) |
+
+Two things to read out of this table:
+
+1. **The quality is identical** - down to the decimal. WAND only ever skips documents that could not have made the cut, so it gives back the exact same results as the slow way. The speed was free.
+2. **The win is biggest when you want fewer results.** At top-10 it is 3× faster; at top-1000 only 1.3×. That is the mechanism showing itself - asking for fewer results means a higher "score to beat," which lets WAND skip more aggressively.
+
+A faster engine that returned _worse_ results would be worthless. Proving the quality stayed identical is the whole point.
+
+## 4. Making results actually good
+
+Matching keywords is just the start. Keyword search has no idea that "heart attack" and "myocardial infarction" mean the same thing. To make results genuinely _good_, I pass them through a **funnel** of increasingly smart - and increasingly slow - stages. Each stage looks at fewer documents but thinks harder about each one.
+
+```
+BM25 (keyword match)   ──▶  ~200 candidates
+Dense (meaning match)  ──▶  ~200 candidates
+Fuse the two lists     ──▶  ~50 candidates
+Re-rank (final judge)  ──▶  top 10
+```
+
+> It is a hiring process. A quick résumé screen (BM25) narrows thousands to a shortlist. A skills test (dense "meaning" matching with neural embeddings) catches strong candidates who happened to use different words. Then a careful final interview (the cross-encoder re-ranker) reads each one closely and decides the final order.
+
+Adding that final re-ranking stage **roughly doubled the quality score** (MRR@10 went from 0.182 with keywords alone to 0.356). But the number that made it click for me was watching the funnel rescue a specific document. For the query _"coffee consumption and heart disease":_
+
+| Document | Keyword rank | Meaning rank | Final rank |
+| -------- | ------------ | ------------ | ---------- |
+| Doc A    | 13           | 9            | **1**      |
+| Doc B    | 69           | 2            | **2**      |
+| Doc C    | 37           | 43           | **3**      |
+
+Doc B was **69th** on keywords alone - nobody would ever scroll that far. The meaning-matching stage understood it was relevant and pulled it up to the #2 result. That is the funnel doing its job: each stage catches what the previous one missed.
+
+## 5. Getting C++ and Python to talk
+
+The fast retrieval core is in C++. The smart ML stages are in Python. They need to speak the same language, so I defined one shared **contract** (a small schema both sides agree on) and had each side generate its own code from it - no hand-written, error-prone glue between them.
+
+> Two departments that use the exact same order form. The C++ side fills in "here are the matches," the Python side reads it the same way every time. Nobody argues about the format.
+
+## 6. A search box that shows its work
+
+Then the part you actually see: a clean search page. Its signature feature is a **"why this result?"** panel - for every result, it shows how each stage of the funnel scored it.
+
+Most search engines are a black box. This one explains itself, like a teacher who does not just hand back a grade but shows the marking, so you can see exactly _why_ result #1 beat result #2.
+
+## 7. Grading the engine on real data
+
+A search engine is only as good as its report card, and _you cannot improve what you do not measure._ I evaluate Joho on **MS MARCO** - a standard benchmark of 8.8 million real passages and 6,980 real questions - using proper ranking metrics (MRR, nDCG). Every change I make gets graded against that, so I can tell whether an idea actually helped or just felt clever.
+
+## 8. Putting it online without wasting money
+
+Finally, getting it running on the internet. The whole system is packaged into containers, and I thought carefully about _where_ to run them, because the wrong choice either costs money around the clock or makes the first visit painfully slow.
+
+> A rented server (like AWS EC2) is an apartment - always ready the second you walk in, but you pay rent 24/7. Serverless (like Cloud Run) is a hotel room that materializes only when you arrive - nearly free when empty, but it has to be built and furnished on each visit, which is slow if your "furniture" is a multi-gigabyte index.
+
+The rule of thumb I landed on: a big, slow-to-load index wants the always-warm apartment; a small, bursty demo wants the pay-nothing-when-idle hotel.
+
+## What I took away
+
+Building search from scratch taught me things no amount of reading could:
+
+- **Relevance is only one ingredient.** Good results come from a pipeline of stages, each covering for the others' blind spots.
+- **An optimization is only real if you measure it.** "3× faster with identical quality" means something; "feels faster" does not.
+- **The interesting work lives in the trade-offs** - speed vs. recall, cost vs. latency, simple vs. smart.
+
+Next up: a learned ranker that figures out the best way to combine these signals from data instead of hand-tuned rules, and an authority signal (PageRank-style) so results are ranked not just by "does the text match" but by "is this source trustworthy." The engine keeps growing one runner at a time.
