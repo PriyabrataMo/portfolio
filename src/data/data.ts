@@ -10,7 +10,7 @@ export const personalData = {
   description:
     "AI/Agent Engineer at QAD Inc. I build LLM-powered agentic workflows for enterprise supply chain automation.",
   summary:
-    "I'm an **AI/Agent Engineer** with **1 year** of experience building production-grade LLM applications and Agentic Systems for ERP and supply chain automation. Currently, I work at **QAD**, where I focus on designing scalable AI agents, evaluation frameworks, observability systems, and workflow automation solutions for enterprise customers.\n\nI hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55), where I ranked **2nd in the department**. Outside of work, I enjoy competitive programming and have solved **2500+ problems** across platforms, achieving **Guardian on LeetCode** (2178) and **4★ on CodeChef** (1917).",
+    "I'm an **AI/Agent Engineer** with **1 year** of experience building production-grade LLM applications and Agentic Systems for ERP and supply chain automation. Currently, I work at **QAD**, where I focus on designing scalable AI agents, evaluation frameworks, observability systems, and workflow automation solutions for enterprise customers.\n\nI hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55), where I ranked **2nd in the department**. Outside of work, I enjoy competitive programming and have solved **2500+ problems** across platforms, achieving **Guardian on [LeetCode](https://leetcode.com/u/prybruhta/)** (2184) and **4★ on [CodeChef](https://www.codechef.com/users/priyabratam)** (1953).",
   avatarUrl: "/avatar.jpg",
 } as const;
 
@@ -208,14 +208,48 @@ export const educationData = [
       "CGPA: 8.55 — Ranked 2nd in the department",
       "Selected for Amazon Machine Learning Summer School 2024",
       "Qualified for Round 2 in the Meta Hacker Cup 2024",
-      "Guardian on LeetCode (top 1%, 2178 rating)",
-      "4★ on CodeChef (1917 rating)",
+      "Guardian on LeetCode (top 1%, 2184 rating)",
+      "4★ on CodeChef (1953 rating)",
       "2500+ DSA problems solved across coding platforms",
     ],
   },
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Joho — From-Scratch Search Engine",
+    href: "https://github.com/PriyabrataMo/joho",
+    dates: "2026",
+    active: true,
+    description:
+      "An advanced information-retrieval engine built from scratch in C++ and Python, reproducing published BEIR BM25 baselines (SciFact nDCG@10 0.661 vs ~0.665) with a full hybrid retrieval + reranking funnel.",
+    detailedDescription:
+      "A production-shaped search engine built to mirror how large-scale search actually works. A C++ core (custom inverted index, BM25, ~3.7x delta+varint posting compression, O(1) mmap index loading) feeds a Python meaning layer (BGE-small embeddings, FAISS HNSW ANN, Reciprocal Rank Fusion, cross-encoder reranking), plus weighted-trie autocomplete and SymSpell spell-correction. A gRPC C++ engine and FastAPI gateway serve a Next.js UI with a per-result 'why this result?' score breakdown. Multithreaded scatter-gather sharding provides horizontal scale, and the stack is containerized for cost-engineered, scale-to-zero Google Cloud Run deployment. Every design choice is documented ADR-style and judged against standard IR metrics (nDCG@10, MRR@10, Recall@k).",
+    keyFeatures: [
+      "Custom C++ inverted index + BM25 reproducing published BEIR baselines (SciFact nDCG@10 0.661 vs ~0.665)",
+      "Hybrid retrieval funnel: BGE-small embeddings + FAISS HNSW + Reciprocal Rank Fusion + cross-encoder reranking (SciFact dense nDCG@10 0.713)",
+      "~3.7x posting-list compression (delta + varint) and O(1) memory-mapped index loading",
+      "Multithreaded scatter-gather sharding, gRPC C++ engine + FastAPI gateway, and a Next.js UI with per-result score explainability",
+    ],
+    technologies: [
+      { name: "C++", icon: "logos:c-plusplus" },
+      { name: "Python", icon: "logos:python" },
+      { name: "PyTorch", icon: "logos:pytorch-icon" },
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Docker", icon: "logos:docker-icon" },
+      { name: "Google Cloud", icon: "logos:google-cloud" },
+    ],
+    links: [
+      {
+        type: "Github",
+        href: "https://github.com/PriyabrataMo/joho",
+        icon: "github",
+      },
+    ],
+    images: [] as string[],
+    video: "",
+  },
   {
     title: "LaResume",
     href: "https://la-resume.com",

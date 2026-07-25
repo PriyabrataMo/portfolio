@@ -15,7 +15,21 @@ export function About({ delay = 0 }: AboutProps) {
         <h2 className="text-xl font-bold">About</h2>
       </BlurFade>
       <BlurFade delay={delay + 0.01}>
-        <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+        <Markdown
+          className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
+          components={{
+            a: ({ href, children, ...props }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                {...props}
+              >
+                {children}
+              </a>
+            ),
+          }}
+        >
           {personalData.summary}
         </Markdown>
       </BlurFade>
