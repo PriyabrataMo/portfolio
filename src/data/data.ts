@@ -218,7 +218,7 @@ export const educationData = [
 export const projectsData = [
   {
     title: "Joho — From-Scratch Search Engine",
-    href: "https://github.com/PriyabrataMo/joho",
+    href: "https://joho.priyabratamondal.com",
     dates: "2026",
     active: true,
     description:
@@ -242,12 +242,17 @@ export const projectsData = [
     ],
     links: [
       {
+        type: "Website",
+        href: "https://joho.priyabratamondal.com",
+        icon: "globe",
+      },
+      {
         type: "Github",
         href: "https://github.com/PriyabrataMo/joho",
         icon: "github",
       },
     ],
-    images: [] as string[],
+    images: ["/joho.png"] as string[],
     video: "",
   },
   {
