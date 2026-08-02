@@ -10,7 +10,7 @@ export const personalData = {
   description:
     "AI/Agent Engineer at QAD Inc. I build LLM-powered agentic workflows for enterprise supply chain automation.",
   summary:
-    "I'm an **AI/Agent Engineer** with **1 year** of experience building production-grade LLM applications and Agentic Systems for ERP and supply chain automation. Currently, I work at **QAD**, where I focus on designing scalable AI agents, evaluation frameworks, observability systems, and workflow automation solutions for enterprise customers.\n\nI hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55), where I ranked **2nd in the department**. Outside of work, I enjoy competitive programming and have solved **2500+ problems** across platforms, achieving **Guardian on [LeetCode](https://leetcode.com/u/prybruhta/)** (2184) and **4★ on [CodeChef](https://www.codechef.com/users/priyabratam)** (1953).",
+    "I'm an **AI/Agent Engineer** with **1 year** of experience building production-grade LLM applications and Agentic Systems for ERP and supply chain automation. Currently, I work at **QAD**, where I focus on designing scalable AI agents, evaluation frameworks, observability systems, and workflow automation solutions for enterprise customers.\n\nI hold a **B.Tech in Computer Science** from Techno Main Salt Lake (CGPA 8.55), where I ranked **2nd in the department**. Outside of work, I enjoy competitive programming and have solved **2500+ problems** across platforms, achieving **Guardian on [LeetCode](https://leetcode.com/u/prybruhta/)** (2219) and **5★ on [CodeChef](https://www.codechef.com/users/priyabratam)** (2001).",
   avatarUrl: "/avatar.jpg",
 } as const;
 
@@ -208,8 +208,8 @@ export const educationData = [
       "CGPA: 8.55 — Ranked 2nd in the department",
       "Selected for Amazon Machine Learning Summer School 2024",
       "Qualified for Round 2 in the Meta Hacker Cup 2024",
-      "Guardian on LeetCode (top 1%, 2184 rating)",
-      "4★ on CodeChef (1953 rating)",
+      "Guardian on LeetCode (top 1%, 2219 rating)",
+      "5★ on CodeChef (2001 rating)",
       "2500+ DSA problems solved across coding platforms",
     ],
   },
