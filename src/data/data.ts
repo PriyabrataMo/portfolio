@@ -1,10 +1,10 @@
-import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookPenIcon } from "lucide-react";
+import { Icons } from "@/components/icons";
 
 export const personalData = {
   name: "Priyabrata Mondal",
   initials: "PM",
-  url: "https://priyabratamondal.com",
+  url: "https://priyabrata.com",
   location: "Bengaluru, Karnataka, India",
   locationLink: "https://www.google.com/maps/place/Bengaluru+India",
   description:

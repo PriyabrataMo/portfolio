@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://priyabratamondal.com/sitemap.xml",
-    host: "https://priyabratamondal.com",
+    sitemap: "https://priyabrata.com/sitemap.xml",
+    host: "https://priyabrata.com",
   };
 }

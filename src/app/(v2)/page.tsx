@@ -12,8 +12,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Priyabrata Mondal",
-  url: "https://priyabratamondal.com",
-  image: "https://priyabratamondal.com/avatar.jpg",
+  url: "https://priyabrata.com",
+  image: "https://priyabrata.com/avatar.jpg",
   jobTitle: "AI/Agent Engineer",
   worksFor: {
     "@type": "Organization",
@@ -35,6 +35,19 @@ const jsonLd = {
     "https://github.com/PriyabrataMo",
     "https://medium.com/@priyabrata8558",
     "https://leetcode.com/priyabrata8558",
+  ],
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://priyabrata.com/",
+  },
+  knowsAbout: [
+    "AI engineering",
+    "LLM applications",
+    "agentic workflows",
+    "enterprise automation",
+    "information retrieval",
+    "Python",
+    "TypeScript",
   ],
   description:
     "AI/Agent Engineer at QAD Inc. building LLM-powered agentic workflows for enterprise supply chain automation. Guardian on LeetCode (top 1%).",

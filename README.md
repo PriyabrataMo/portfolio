@@ -3,7 +3,13 @@ Welcome to my professional portfolio website built with [Next.js](https://nextjs
 
 ## Live Site
 
-Visit my live portfolio at [priyabratamondal.com](https://priyabratamondal.com).
+Visit my live portfolio at [priyabrata.com](https://priyabrata.com).
+
+## Analytics and Search
+
+Vercel Web Analytics is mounted in the root layout. After deployment, enable it in
+the Vercel project under **Analytics** to see page views, referrers, and traffic
+geography. Add `priyabrata.com` as a Domain property in [Google Search Console](https://search.google.com/search-console), verify ownership with the DNS record Google provides, and submit `https://priyabrata.com/sitemap.xml`.
 
 ## Getting Started
 
@@ -48,4 +54,3 @@ bun lint
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
-

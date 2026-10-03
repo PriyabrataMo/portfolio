@@ -1,10 +1,15 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import "./globals.css";
 
-const BASE_URL = "https://priyabratamondal.com";
+const BASE_URL = "https://priyabrata.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  applicationName: "Priyabrata Mondal",
+  alternates: {
+    canonical: BASE_URL,
+  },
   title: {
     default: "Priyabrata Mondal | AI/Agent Engineer",
     template: "%s | Priyabrata Mondal",
@@ -72,7 +77,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

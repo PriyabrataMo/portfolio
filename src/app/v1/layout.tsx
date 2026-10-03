@@ -1,13 +1,12 @@
 "use client";
 
+import { Nunito } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Header from "@/components/v1/Header";
 import RandomFavicon from "@/components/v1/RandomFavIcon";
 import ThemeSwitch from "@/components/v1/ThemeSwitch";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
 import ThemeContextProvider from "@/context/ThemeContext";
-import { Analytics } from "@vercel/analytics/react";
-import { Nunito } from "next/font/google";
-import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -23,7 +22,6 @@ export default function V1Layout({ children }: { children: React.ReactNode }) {
           {children}
           <Toaster position="top-right" />
           <ThemeSwitch />
-          <Analytics />
         </div>
       </ActiveSectionContextProvider>
     </ThemeContextProvider>
